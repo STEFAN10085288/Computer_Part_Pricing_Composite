@@ -14,13 +14,13 @@ namespace Computer_Part_Pricing_Composite
     {
         protected string name;
         protected int price;
+        protected int quantity;
 
-        public Items(string name, int price)
+        public Items(string name, int price, int quantity)
         {
             this.name = name;
             this.price = price;
+            this.quantity = quantity;
         }
-
-        public abstract int CalculateTotalPrice();
     }
 }

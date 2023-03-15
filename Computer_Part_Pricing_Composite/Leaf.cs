@@ -8,18 +8,16 @@ namespace Computer_Part_Pricing_Composite
 {
     //inherits from Items to ba able to use properties
     //overrides the inherited calculate method
-    public class Leaf : Items
+    public class Leaf : Items, IComponent
     {
+        public Leaf(string name, int price, int quantity) : base(name, price, quantity) { }
 
-        public Leaf(string name, int price):base(name, price) {}
 
-
-        public override int CalculateTotalPrice()
+        public int CalculateTotalPrice()
         {
-            Console.WriteLine(name + " with the price " + price);
-            return price;
+            Console.WriteLine(name + " with the price " + (price * quantity));
+            return (price * quantity);
         }
-
 
 
     }
